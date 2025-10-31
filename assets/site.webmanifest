@@ -1,21 +1,22 @@
 {
   "name": "Timplu Tecnologia",
   "short_name": "Timplu",
+  "description": "Desenvolvemos landing pages profissionais em até 7 dias, com copy orientada a vendas e performance otimizada.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#005691",
   "icons": [
     {
-      "src": "/web-app-manifest-192x192.png",
+      "src": "/assets/web-app-manifest-192x192.png",
       "sizes": "192x192",
       "type": "image/png",
-      "purpose": "maskable"
+      "purpose": "any maskable"
     },
     {
-      "src": "/web-app-manifest-512x512.png",
-      "sizes": "512x512",
-      "type": "image/png",
-      "purpose": "maskable"
+      "src": "/assets/apple-touch-icon.png",
+      "sizes": "180x180",
+      "type": "image/png"
     }
-  ],
-  "theme_color": "#ffffff",
-  "background_color": "#ffffff",
-  "display": "standalone"
+  ]
 }
