@@ -57,7 +57,7 @@
       --bg-light:#f9fafb;
       --bg-dark:#0f172a;
       --text:#0f172a;
-      --text-secondary:#64748b;
+      --text-secondary:#475569;
       --text-light:#f1f5f9;
       --success:#10b981;
       --error:#ef4444;
@@ -263,8 +263,21 @@ footer .footer-grid, .rodape .footer-grid {
 
 img { max-width: 100%; height: auto; }
 
+/* ========== MOBILE OPTIMIZATIONS ========== */
 @media(max-width:639px){
+  /* Reduce padding in mobile for better space usage */
+  section { padding-top: var(--space-xl); padding-bottom: var(--space-xl); }
+
+  /* Smaller gaps in grids */
+  .beneficios-grid { gap: var(--space-md); }
+  .como-funciona .passos { gap: var(--space-lg); }
+
+  /* Adjust button padding */
   .btn-primary, .btn-secondary, .btn-cta-final { padding: 14px 18px; }
+
+  /* Ensure touch targets are adequate (min 44x44) */
+  .btn-primary, .btn-submit, .btn-cta-final { min-height: 48px; }
+  details summary { min-height: 48px; }
 }
 
 </style>
@@ -422,30 +435,136 @@ img { max-width: 100%; height: auto; }
       </div>
     </section>
 
+    <section class="oferta" id="orcamento">
+      <div class="container">
+        <div class="oferta-grid">
+          <div class="oferta-texto">
+            <h2>Solicite seu orçamento sem compromisso</h2>
+            <p>Preencha o formulário e receba uma proposta personalizada em até 24h. Sem custo, sem pegadinhas.</p>
+            <ul class="oferta-garantias">
+              <li>
+                <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                  <path d="M7 10l2 2 4-4" stroke="#10b981" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                  <circle cx="10" cy="10" r="8" stroke="#10b981" stroke-width="2"/>
+                </svg>
+                <span>Resposta em até 24h</span>
+              </li>
+              <li>
+                <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                  <path d="M7 10l2 2 4-4" stroke="#10b981" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                  <circle cx="10" cy="10" r="8" stroke="#10b981" stroke-width="2"/>
+                </svg>
+                <span>Seus dados 100% protegidos (LGPD)</span>
+              </li>
+              <li>
+                <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                  <path d="M7 10l2 2 4-4" stroke="#10b981" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                  <circle cx="10" cy="10" r="8" stroke="#10b981" stroke-width="2"/>
+                </svg>
+                <span>Sem compromisso de contratação</span>
+              </li>
+            </ul>
+          </div>
+          <div class="formulario">
+            <form id="form-orcamento" novalidate>
+              <div class="form-group">
+                <label for="nome">Nome completo *</label>
+                <input type="text" id="nome" name="nome" required autocomplete="name" aria-required="true" aria-describedby="nome-error">
+                <span class="error-msg" id="nome-error" role="alert" aria-live="polite"></span>
+              </div>
+
+              <div class="form-group">
+                <label for="email">E-mail profissional *</label>
+                <input type="email" id="email" name="email" required autocomplete="email" inputmode="email" aria-required="true" aria-describedby="email-error">
+                <span class="error-msg" id="email-error" role="alert" aria-live="polite"></span>
+              </div>
+
+              <div class="form-group">
+                <label for="telefone">WhatsApp *</label>
+                <input type="tel" id="telefone" name="telefone" required autocomplete="tel" inputmode="tel" placeholder="(11) 99999-9999" aria-required="true" aria-describedby="telefone-error">
+                <span class="error-msg" id="telefone-error" role="alert" aria-live="polite"></span>
+              </div>
+
+              <div class="form-group">
+                <label for="empresa">Empresa</label>
+                <input type="text" id="empresa" name="empresa" autocomplete="organization">
+              </div>
+
+              <div class="form-group">
+                <label for="tipo-projeto">Tipo de projeto *</label>
+                <select id="tipo-projeto" name="tipo-projeto" required aria-required="true" aria-describedby="tipo-projeto-error">
+                  <option value="">Selecione...</option>
+                  <option value="landing-page">Landing Page</option>
+                  <option value="site-institucional">Site Institucional</option>
+                  <option value="ecommerce">E-commerce</option>
+                  <option value="outro">Outro</option>
+                </select>
+                <span class="error-msg" id="tipo-projeto-error" role="alert" aria-live="polite"></span>
+              </div>
+
+              <div class="form-checkbox">
+                <input type="checkbox" id="lgpd" name="lgpd" required aria-required="true" aria-describedby="lgpd-error">
+                <label for="lgpd">Aceito receber contato da Timplu e concordo com a <a href="#" target="_blank" rel="noopener">Política de Privacidade</a> *</label>
+              </div>
+              <span class="error-msg" id="lgpd-error" role="alert" aria-live="polite"></span>
+
+              <input type="text" name="honeypot" class="honeypot" tabindex="-1" autocomplete="off" aria-hidden="true">
+
+              <button type="submit" class="btn-submit" id="btn-submit">
+                Solicitar Orçamento Gratuito
+                <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                  <path d="M4 10h12m0 0l-5-5m5 5l-5 5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </button>
+
+              <div class="form-success" id="form-success" role="status" aria-live="polite">
+                ✓ Orçamento enviado! Entraremos em contato em até 24h.
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+
     <section class="faq">
       <div class="container">
         <div class="faq-header">
           <h2>Perguntas frequentes</h2>
         </div>
         <div class="faq-list">
-          <details>
-            <summary><span>Em quanto tempo minha landing page fica pronta?</span></summary>
-            <div>Até 7 dias. Nosso processo é enxuto: briefing → wireframe/copy → design → desenvolvimento → integrações → go-live.</div>
+          <details id="faq-1">
+            <summary aria-controls="faq-1-content" aria-expanded="false">
+              <span>Em quanto tempo minha landing page fica pronta?</span>
+            </summary>
+            <div id="faq-1-content">Até 7 dias. Nosso processo é enxuto: briefing → wireframe/copy → design → desenvolvimento → integrações → go-live.</div>
           </details>
 
-          <details>
-            <summary><span>O que está incluso no serviço?</span></summary>
-            <div>Copywriting, design responsivo, desenvolvimento, otimização de performance, SEO on-page, integrações (formulário/WhatsApp/CRM/GA4/GTM), configuração de pixels/UTMs, QA e publicação.</div>
+          <details id="faq-2">
+            <summary aria-controls="faq-2-content" aria-expanded="false">
+              <span>O que está incluso no serviço?</span>
+            </summary>
+            <div id="faq-2-content">Copywriting, design responsivo, desenvolvimento, otimização de performance, SEO on-page, integrações (formulário/WhatsApp/CRM/GA4/GTM), configuração de pixels/UTMs, QA e publicação.</div>
           </details>
 
-          <details>
-            <summary><span>Vocês fazem o texto ou preciso enviar?</span></summary>
-            <div>Nós escrevemos a copy com base no seu briefing. Se já houver conteúdo, refinamos para conversão.</div>
+          <details id="faq-3">
+            <summary aria-controls="faq-3-content" aria-expanded="false">
+              <span>Vocês fazem o texto ou preciso enviar?</span>
+            </summary>
+            <div id="faq-3-content">Nós escrevemos a copy com base no seu briefing. Se já houver conteúdo, refinamos para conversão.</div>
           </details>
 
-          <details>
-            <summary><span>Quantas revisões estão incluídas?</span></summary>
-            <div>Duas rodadas de ajustes (layout e versão final). Precisa de algo além? Oferecemos pacote de melhorias contínuas.</div>
+          <details id="faq-4">
+            <summary aria-controls="faq-4-content" aria-expanded="false">
+              <span>Quantas revisões estão incluídas?</span>
+            </summary>
+            <div id="faq-4-content">Duas rodadas de ajustes (layout e versão final). Precisa de algo além? Oferecemos pacote de melhorias contínuas.</div>
+          </details>
+
+          <details id="faq-5">
+            <summary aria-controls="faq-5-content" aria-expanded="false">
+              <span>Preciso ter um domínio e hospedagem?</span>
+            </summary>
+            <div id="faq-5-content">Não obrigatoriamente. Podemos orientar na contratação ou publicar em subdomínio temporário enquanto você decide. O importante é começar rápido.</div>
           </details>
         </div>
       </div>
@@ -641,7 +760,10 @@ img { max-width: 100%; height: auto; }
     .oferta-grid{display:grid;gap:var(--space-2xl);align-items:center}
     @media(min-width:1024px){.oferta-grid{grid-template-columns:5fr 7fr}}
     .oferta-texto h2{margin-bottom:var(--space-md)}
-    .oferta-texto p{font-size:1.125rem;line-height:1.7}
+    .oferta-texto p{font-size:1.125rem;line-height:1.7;margin-bottom:var(--space-lg)}
+    .oferta-garantias{display:grid;gap:var(--space-sm);margin-top:var(--space-lg)}
+    .oferta-garantias li{display:flex;align-items:center;gap:var(--space-sm);color:var(--text);font-size:0.9375rem}
+    .oferta-garantias svg{flex-shrink:0}
     .formulario{background:var(--bg-light);padding:var(--space-xl);border-radius:12px;border:1px solid var(--border)}
     .form-group{margin-bottom:var(--space-md)}
     .form-group label{display:block;font-weight:600;color:var(--text);margin-bottom:var(--space-xs)}
@@ -737,7 +859,211 @@ img { max-width: 100%; height: auto; }
       }, { passive: true });
     })();
   </script>
-  
+
+  <script>
+    // ========== FORM VALIDATION ==========
+    (function() {
+      'use strict';
+
+      const form = document.getElementById('form-orcamento');
+      if (!form) return;
+
+      const fields = {
+        nome: { regex: /^[a-zA-ZÀ-ÿ\s]{3,}$/, msg: 'Digite seu nome completo (mínimo 3 caracteres)' },
+        email: { regex: /^[^\s@]+@[^\s@]+\.[^\s@]+$/, msg: 'Digite um e-mail válido' },
+        telefone: { regex: /^\(?[0-9]{2}\)?\s?[0-9]{4,5}-?[0-9]{4}$/, msg: 'Digite um telefone válido (ex: 11 99999-9999)' },
+        'tipo-projeto': { required: true, msg: 'Selecione o tipo de projeto' },
+        lgpd: { required: true, msg: 'Você precisa aceitar para continuar' }
+      };
+
+      // Validação inline em tempo real
+      Object.keys(fields).forEach(fieldName => {
+        const input = document.getElementById(fieldName);
+        const errorEl = document.getElementById(fieldName + '-error');
+        const group = input?.closest('.form-group');
+
+        if (!input) return;
+
+        function validateField() {
+          const value = input.value.trim();
+          const field = fields[fieldName];
+          let isValid = true;
+          let errorMsg = '';
+
+          // Check honeypot
+          const honeypot = form.querySelector('[name="honeypot"]');
+          if (honeypot && honeypot.value !== '') {
+            return; // Bot detected, silently fail
+          }
+
+          if (input.type === 'checkbox') {
+            isValid = input.checked;
+          } else if (input.tagName === 'SELECT') {
+            isValid = value !== '';
+          } else if (field.regex) {
+            isValid = field.regex.test(value);
+          } else if (field.required) {
+            isValid = value.length > 0;
+          }
+
+          if (!isValid && input !== document.activeElement && value.length > 0) {
+            errorMsg = field.msg;
+          }
+
+          // Update UI
+          if (errorMsg) {
+            if (errorEl) {
+              errorEl.textContent = errorMsg;
+              errorEl.style.display = 'block';
+            }
+            input.classList.add('invalid');
+            input.classList.remove('valid');
+            if (group) group.classList.add('has-error');
+            input.setAttribute('aria-invalid', 'true');
+          } else if (value.length > 0 || input.type === 'checkbox') {
+            if (errorEl) {
+              errorEl.textContent = '';
+              errorEl.style.display = 'none';
+            }
+            input.classList.remove('invalid');
+            if (isValid) input.classList.add('valid');
+            if (group) group.classList.remove('has-error');
+            input.setAttribute('aria-invalid', 'false');
+          }
+
+          return isValid;
+        }
+
+        // Validate on blur
+        input.addEventListener('blur', validateField);
+
+        // Validate on input (debounced)
+        let timeout;
+        input.addEventListener('input', function() {
+          clearTimeout(timeout);
+          timeout = setTimeout(validateField, 300);
+        });
+      });
+
+      // Form submit
+      form.addEventListener('submit', function(e) {
+        e.preventDefault();
+
+        // Check honeypot
+        const honeypot = form.querySelector('[name="honeypot"]');
+        if (honeypot && honeypot.value !== '') {
+          return; // Bot detected, silently fail
+        }
+
+        // Validate all fields
+        let isFormValid = true;
+        Object.keys(fields).forEach(fieldName => {
+          const input = document.getElementById(fieldName);
+          if (!input) return;
+
+          const value = input.type === 'checkbox' ? input.checked : input.value.trim();
+          const field = fields[fieldName];
+          let isValid = true;
+
+          if (input.type === 'checkbox') {
+            isValid = input.checked;
+          } else if (input.tagName === 'SELECT') {
+            isValid = value !== '';
+          } else if (field.regex) {
+            isValid = field.regex.test(value);
+          } else if (field.required) {
+            isValid = value.length > 0;
+          }
+
+          if (!isValid) {
+            isFormValid = false;
+            const errorEl = document.getElementById(fieldName + '-error');
+            if (errorEl) {
+              errorEl.textContent = field.msg;
+              errorEl.style.display = 'block';
+            }
+            input.classList.add('invalid');
+            input.setAttribute('aria-invalid', 'true');
+            const group = input.closest('.form-group');
+            if (group) group.classList.add('has-error');
+          }
+        });
+
+        if (!isFormValid) {
+          // Focus first invalid field
+          const firstInvalid = form.querySelector('.invalid');
+          if (firstInvalid) firstInvalid.focus();
+          return;
+        }
+
+        // Submit form
+        const btnSubmit = document.getElementById('btn-submit');
+        const formSuccess = document.getElementById('form-success');
+
+        btnSubmit.disabled = true;
+        btnSubmit.textContent = 'Enviando...';
+
+        // Simulate form submission (replace with real endpoint)
+        setTimeout(function() {
+          form.style.display = 'none';
+          formSuccess.classList.add('show');
+
+          // Track form_submit event (will be used in Onda C)
+          if (window.gtag) {
+            gtag('event', 'form_submit', {
+              event_category: 'engagement',
+              event_label: 'orcamento'
+            });
+          }
+        }, 1000);
+      });
+
+      // Track form_start when user interacts
+      let formStarted = false;
+      form.addEventListener('focus', function() {
+        if (!formStarted) {
+          formStarted = true;
+          // Track form_start event (will be used in Onda C)
+          if (window.gtag) {
+            gtag('event', 'form_start', {
+              event_category: 'engagement',
+              event_label: 'orcamento'
+            });
+          }
+        }
+      }, true);
+    })();
+  </script>
+
+  <script>
+    // ========== FAQ ACCESSIBILITY & TRACKING ==========
+    (function() {
+      'use strict';
+
+      const faqItems = document.querySelectorAll('.faq-list details');
+
+      faqItems.forEach(function(details) {
+        const summary = details.querySelector('summary');
+        if (!summary) return;
+
+        // Update aria-expanded on toggle
+        details.addEventListener('toggle', function() {
+          const isOpen = details.open;
+          summary.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+
+          // Track FAQ open event (will be used in Onda C)
+          if (isOpen && window.gtag) {
+            const question = summary.textContent.trim();
+            gtag('event', 'faq_open', {
+              event_category: 'engagement',
+              event_label: question
+            });
+          }
+        });
+      });
+    })();
+  </script>
+
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
