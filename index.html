@@ -289,7 +289,7 @@ img { max-width: 100%; height: auto; }
   </header>
   
   <main id="conteudo">
-    
+
     <section class="hero">
       <div class="container">
         <div class="hero-grid">
@@ -297,7 +297,7 @@ img { max-width: 100%; height: auto; }
             <h1>Seu site no ar em até 7 dias - rápido, bonito e <strong>feito para converter</strong></h1>
             <p>Desenhamos e desenvolvemos <strong>landing pages profissionais</strong> em poucos dias, com copy orientada a vendas, desempenho veloz e rastreio completo para você medir cada clique.</p>
             <div class="hero-cta">
-              <a href="https://api.whatsapp.com/send?phone=5511956042276&text=Ol%C3%A1%2C+vim+pelo+site+e+gostaria+de+saber+mais+sobre+o+servi%C3%A7o+de+voc%C3%AAs." class="btn-primary">
+              <a href="https://api.whatsapp.com/send?phone=5511956042276&text=Ol%C3%A1%2C+vim+pelo+site+e+gostaria+de+saber+mais+sobre+o+servi%C3%A7o+de+voc%C3%AAs." class="btn-primary" data-event="cta_click" data-location="hero">
                 Fazer Orçamento Gratuito
                 <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
                   <path d="M4 10h12m0 0l-5-5m5 5l-5 5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
@@ -307,47 +307,274 @@ img { max-width: 100%; height: auto; }
           </div>
           <div class="hero-image">
             <picture>
+              <source media="(max-width: 640px)" srcset="assets/timplu-hero.webp" type="image/webp" width="640" height="360">
+              <source media="(max-width: 1024px)" srcset="assets/timplu-hero.webp" type="image/webp" width="1024" height="576">
               <img src="assets/timplu-hero.webp" alt="Dashboard de exemplo de landing page da Timplu" width="1200" height="675" fetchpriority="high" decoding="async">
             </picture>
           </div>
         </div>
       </div>
     </section>
-    
+
+    <section class="prova-social">
+      <div class="container">
+        <div class="prova-social-header">
+          <small>Confiado por equipes de todo o brasil</small>
+          <p class="prova-social-metrica">+300 empresas aceleraram resultados com landing pages da Timplu</p>
+        </div>
+        <div class="prova-logos">
+          <img src="assets/logo-grupohash.webp" alt="Grupo hash" width="100" height="40" loading="lazy" decoding="async">
+          <img src="assets/logo-zenithtech.webp" alt="Zenith Tech" width="100" height="40" loading="lazy" decoding="async">
+          <img src="assets/logo-lumina.webp" alt="Lumina Consultoria" width="100" height="40" loading="lazy" decoding="async">
+          <img src="assets/logo-venturahub.webp" alt="VenturaHub" width="100" height="40" loading="lazy" decoding="async">
+          <img src="assets/logo-quantis.webp" alt="Quantis Labs" width="100" height="40" loading="lazy" decoding="async">
+          <img src="assets/logo-nuage.webp" alt="Nuage Solutions" width="100" height="40" loading="lazy" decoding="async">
+        </div>
+        <div class="depoimento">
+          <p class="depoimento-texto">"Lançamos campanha com a LP nova e já no primeiro dia vimos o impacto: lead mais qualificado e custo por conversão menor. O processo foi rápido e sem fricção."</p>
+          <div class="depoimento-autor">
+            <img src="assets/daniela-avatar.avif" alt="" class="depoimento-avatar" width="48" height="48" loading="lazy" decoding="async">
+            <div class="depoimento-info">
+              <span class="depoimento-nome">Daniela Sousa</span>
+              <span class="depoimento-cargo">Coord. de Operações – Grupo Hash</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="beneficios" id="beneficios">
+      <div class="container">
+        <div class="beneficios-header">
+          <h2>Menos esforço técnico, <strong>mais conversões</strong></h2>
+          <p>A Timplu combina estratégia de copy, design e performance para transformar tráfego em resultado.</p>
+        </div>
+        <div class="beneficios-grid">
+          <div class="beneficio-card">
+            <svg class="beneficio-icon" viewBox="0 0 56 56" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+              <circle cx="28" cy="28" r="28" fill="#e0e7ff"/>
+              <rect x="18" y="20" width="20" height="18" rx="2" stroke="#005691" stroke-width="2" fill="none"/>
+              <path d="M22 18v4M34 18v4M18 26h20" stroke="#005691" stroke-width="2" stroke-linecap="round"/>
+              <path d="M23 30l3 3 6-6" stroke="#005691" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+            <h3>Entrega em até 7 dias</h3>
+            <p>Roteiro claro, processo ágil e prazos cumpridos. Você aprova o layout antes do desenvolvimento.</p>
+          </div>
+          <div class="beneficio-card">
+            <svg class="beneficio-icon" viewBox="0 0 56 56" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+              <circle cx="28" cy="28" r="28" fill="#d1fae5"/>
+              <path d="M28 15l-3 11h6l-3 15" stroke="#10b981" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+              <path d="M18 28a10 10 0 0 1 20 0" stroke="#10b981" stroke-width="2" stroke-linecap="round" fill="none" opacity="0.5"/>
+            </svg>
+            <h3>Performance que carrega rápido</h3>
+            <p>Código leve, imagens otimizadas e boas práticas de Core Web Vitals (LCP/INP/CLS).</p>
+          </div>
+          <div class="beneficio-card">
+            <svg class="beneficio-icon" viewBox="0 0 56 56" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+              <circle cx="28" cy="28" r="28" fill="#e0e7ff"/>
+              <circle cx="22" cy="24" r="3" fill="#005691"/>
+              <circle cx="34" cy="24" r="3" fill="#005691"/>
+              <circle cx="22" cy="32" r="3" fill="#005691"/>
+              <circle cx="34" cy="32" r="3" fill="#005691"/>
+              <path d="M25 24h6M25 32h6M22 27v2M34 27v2" stroke="#005691" stroke-width="2" stroke-linecap="round"/>
+              <path d="M26 36l2 2 3-4" stroke="#005691" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+            <h3>Integrações e mensuração</h3>
+            <p>Formulários + WhatsApp, CRM, GA4/GTM, pixels e UTMs — rastreio completo desde o dia 1.</p>
+          </div>
+          <div class="beneficio-card">
+            <svg class="beneficio-icon" viewBox="0 0 56 56" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+              <circle cx="28" cy="28" r="28" fill="#d1fae5"/>
+              <rect x="19" y="18" width="14" height="18" rx="2" stroke="#10b981" stroke-width="2" fill="none"/>
+              <path d="M23 24h8M23 28h8M23 32h5" stroke="#10b981" stroke-width="1.5" stroke-linecap="round"/>
+              <circle cx="33" cy="33" r="4" stroke="#10b981" stroke-width="2" fill="none"/>
+              <path d="M36 36l3 3" stroke="#10b981" stroke-width="2" stroke-linecap="round"/>
+            </svg>
+            <h3>Copy & SEO</h3>
+            <p>Texto pensado para conversão, SEO on-page, FAQ de objeções e microcopys de privacidade.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="como-funciona" id="como-funciona">
+      <div class="container">
+        <div class="como-funciona-header">
+          <h2>Três passos para sua landing page <strong>começar a vender</strong></h2>
+        </div>
+        <div class="passos">
+          <div class="passo">
+            <div class="passo-numero">1</div>
+            <h3>Briefing Rápido</h3>
+            <p>Entendemos público, oferta e objetivo da campanha. Definimos a arquitetura da página e os eventos que serão medidos.</p>
+          </div>
+          <div class="passo">
+            <div class="passo-numero">2</div>
+            <h3>Mão na Massa</h3>
+            <p>Você aprova a estrutura e o layout. Codificamos com foco em velocidade, acessibilidade e mobile-first.</p>
+          </div>
+          <div class="passo">
+            <div class="passo-numero">3</div>
+            <h3>Tudo Pronto</h3>
+            <p>Configuramos pixels, GA4/GTM e UTMs. Publicamos e você já acompanha as conversões em tempo real.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="faq">
+      <div class="container">
+        <div class="faq-header">
+          <h2>Perguntas frequentes</h2>
+        </div>
+        <div class="faq-list">
+          <details>
+            <summary><span>Em quanto tempo minha landing page fica pronta?</span></summary>
+            <div>Até 7 dias. Nosso processo é enxuto: briefing → wireframe/copy → design → desenvolvimento → integrações → go-live.</div>
+          </details>
+
+          <details>
+            <summary><span>O que está incluso no serviço?</span></summary>
+            <div>Copywriting, design responsivo, desenvolvimento, otimização de performance, SEO on-page, integrações (formulário/WhatsApp/CRM/GA4/GTM), configuração de pixels/UTMs, QA e publicação.</div>
+          </details>
+
+          <details>
+            <summary><span>Vocês fazem o texto ou preciso enviar?</span></summary>
+            <div>Nós escrevemos a copy com base no seu briefing. Se já houver conteúdo, refinamos para conversão.</div>
+          </details>
+
+          <details>
+            <summary><span>Quantas revisões estão incluídas?</span></summary>
+            <div>Duas rodadas de ajustes (layout e versão final). Precisa de algo além? Oferecemos pacote de melhorias contínuas.</div>
+          </details>
+        </div>
+      </div>
+    </section>
+
+    <section class="cta-final">
+      <div class="container">
+        <h2>Pronto para colocar seu site para trabalhar por você?</h2>
+        <p>Junte-se a centenas de empresas que já estão colhendo os benefícios de um site que realmente converte. Faça um orçamento agora mesmo!</p>
+        <a href="https://api.whatsapp.com/send?phone=5511956042276&text=Ol%C3%A1%2C+vim+pelo+site+e+gostaria+de+saber+mais+sobre+o+servi%C3%A7o+de+voc%C3%AAs." class="btn-cta-final" data-event="cta_click" data-location="final">
+          Fazer Orçamento Grátis
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <path d="M5 12h14m0 0l-7-7m7 7l-7 7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </a>
+      </div>
+    </section>
+
   </main>
-  
+
+  <a href="https://api.whatsapp.com/send?phone=5511956042276&text=Ol%C3%A1%2C+vim+pelo+site+e+gostaria+de+saber+mais+sobre+o+servi%C3%A7o+de+voc%C3%AAs."
+     class="whatsapp-float"
+     target="_blank"
+     rel="noopener"
+     data-event="whatsapp_click"
+     aria-label="Falar no WhatsApp">
+    <svg viewBox="0 0 24 24" fill="currentColor">
+      <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893A11.821 11.821 0 0020.885 3.726"/>
+    </svg>
+  </a>
+
+  <!-- CTA Sticky Mobile -->
+  <div class="cta-sticky" id="cta-sticky" aria-hidden="true">
+    <div class="container">
+      <a href="https://api.whatsapp.com/send?phone=5511956042276&text=Ol%C3%A1%2C+vim+pelo+site+e+gostaria+de+saber+mais+sobre+o+servi%C3%A7o+de+voc%C3%AAs." class="btn-primary btn-sticky" data-event="cta_click" data-location="sticky">
+        Fazer Orçamento Gratuito
+        <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <path d="M4 10h12m0 0l-5-5m5 5l-5 5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </a>
+    </div>
+  </div>
+
+  <footer>
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-logo">
+          <a href="/" class="logo" aria-label="Página inicial">
+            <img src="assets/logo.webp" class="logo--white" width="160" height="40" alt="Timplu Tecnologia">
+          </a>
+          <p style="color:var(--text-light);font-size:0.9375rem;margin-top:var(--space-sm)">Desenvolvemos seu site profissional em poucos dias, com design que encanta e desempenho que converte!</p>
+        </div>
+        <div class="footer-links">
+          <h4>Contato</h4>
+          <ul>
+            <li><a href="https://api.whatsapp.com/send?phone=5511956042276&text=Ol%C3%A1%2C+vim+pelo+site+e+gostaria+de+saber+mais+sobre+o+servi%C3%A7o+de+voc%C3%AAs.">WhatsApp</a></li>
+            <li><a href="mailto:timplu.tecnologia@gmail.com">E-mail</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2025 Timplu Tecnologia - Todos os direitos reservados.</p>
+      </div>
+    </div>
+  </footer>
+
   <style>
+    /* ========== WHATSAPP FLOAT ========== */
+    .whatsapp-float {
+      position: fixed;
+      bottom: 2rem;
+      right: 2rem;
+      background: #25d366;
+      color: white;
+      width: 60px;
+      height: 60px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-decoration: none;
+      box-shadow: 0 4px 12px rgba(37, 211, 102, 0.4);
+      transition: all 0.2s ease;
+      z-index: 100;
+    }
+    .whatsapp-float:hover {
+      transform: scale(1.1);
+      box-shadow: 0 6px 16px rgba(37, 211, 102, 0.6);
+    }
+    .whatsapp-float svg {
+      width: 28px;
+      height: 28px;
+    }
 
-        .whatsapp-float {
-            position: fixed;
-            bottom: 2rem;
-            right: 2rem;
-            background: #25d366;
-            color: white;
-            width: 60px;
-            height: 60px;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            text-decoration: none;
-            box-shadow: 0 4px 12px rgba(37, 211, 102, 0.4);
-            transition: all 0.2s ease;
-            z-index: 100;
-        }
-        .whatsapp-float:hover {
-            transform: scale(1.1);
-            box-shadow: 0 6px 16px rgba(37, 211, 102, 0.6);
-        }
-        .whatsapp-float svg {
-            width: 28px;
-            height: 28px;
-        }
+    /* ========== CTA STICKY MOBILE ========== */
+    .cta-sticky {
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background: rgba(255, 255, 255, 0.98);
+      border-top: 1px solid var(--border);
+      padding: 12px 0;
+      transform: translateY(100%);
+      transition: transform 300ms ease-out;
+      z-index: 99;
+      box-shadow: 0 -4px 12px rgba(0, 0, 0, 0.08);
+      backdrop-filter: blur(8px);
+    }
+    .cta-sticky[aria-hidden="false"] {
+      transform: translateY(0);
+    }
+    .cta-sticky .btn-sticky {
+      width: 100%;
+      justify-content: center;
+      font-size: 0.9375rem;
+      padding: 14px 24px;
+    }
+    @media (min-width: 768px) {
+      .cta-sticky {
+        display: none;
+      }
+    }
 
-          .logo img { width:130px; height:60px; display:block; }
-          .logo--white{
-        filter: brightness(0) saturate(100%) invert(1);
-        }
+    /* ========== LOGO ADJUSTMENTS ========== */
+    .logo img { width: 130px; height: 60px; display: block; }
+    .logo--white {
+      filter: brightness(0) saturate(100%) invert(1);
+    }
 
 
     .prova-social{padding:var(--space-xl) 0;background:var(--bg-light);border-top:1px solid var(--border);border-bottom:1px solid var(--border)}
@@ -472,226 +699,43 @@ img { max-width: 100%; height: auto; }
     .footer-bottom{border-top:1px solid rgba(255,255,255,0.1);padding-top:var(--space-md);text-align:center}
     .footer-bottom p{font-size:0.875rem;color:var(--text-light)}
   </style>
-  
+
   <script>
-    document.addEventListener('DOMContentLoaded', function() {
-      const main = document.getElementById('conteudo');
-      
-      const provaHTML = `
-        <section class="prova-social">
-          <div class="container">
-            <div class="prova-social-header">
-              <small>Confiado por equipes de todo o brasil</small>
-              <p class="prova-social-metrica">+300 empresas aceleraram resultados com landing pages da Timplu</p>
-            </div>
-            <div class="prova-logos">
-              <img src="assets/logo-grupohash.webp" alt="Grupo hash" width="100" height="40" loading="lazy" decoding="async">
-              <img src="assets/logo-zenithtech.webp" alt="Zenith Tech" width="100" height="40" loading="lazy" decoding="async">
-              <img src="assets/logo-lumina.webp" alt="Lumina Consultoria" width="100" height="40" loading="lazy" decoding="async">
-              <img src="assets/logo-venturahub.webp" alt="VenturaHub" width="100" height="40" loading="lazy" decoding="async">
-              <img src="assets/logo-quantis.webp" alt="Quantis Labs" width="100" height="40" loading="lazy" decoding="async">
-              <img src="assets/logo-nuage.webp" alt="Nuage Solutions" width="100" height="40" loading="lazy" decoding="async">
-            </div>
-            <div class="depoimento">
-              <p class="depoimento-texto">"Lançamos campanha com a LP nova e já no primeiro dia vimos o impacto: lead mais qualificado e custo por conversão menor. O processo foi rápido e sem fricção."</p>
-              <div class="depoimento-autor">
-                <img src="assets/daniela-avatar.avif" alt="" class="depoimento-avatar" width="48" height="48" loading="lazy" decoding="async">
-                <div class="depoimento-info">
-                  <span class="depoimento-nome">Daniela Sousa</span>
-                  <span class="depoimento-cargo">Coord. de Operações – Grupo Hash</span>
-                </div>
-              </div>
-            </div>
-          </div>
-        </section>
-      `;
-      
-      const beneficiosHTML = `
-        <section class="beneficios" id="beneficios">
-          <div class="container">
-            <div class="beneficios-header">
-              <h2>Menos esforço técnico, <strong>mais conversões</strong></h2>
-              <p>A Timplu combina estratégia de copy, design e performance para transformar tráfego em resultado.</p>
-            </div>
-            <div class="beneficios-grid">
-              <div class="beneficio-card">
-                <svg class="beneficio-icon" viewBox="0 0 56 56" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-                  <circle cx="28" cy="28" r="28" fill="#e0e7ff"/>
-                  <!-- Calendário -->
-                  <rect x="18" y="20" width="20" height="18" rx="2" stroke="#005691" stroke-width="2" fill="none"/>
-                  <path d="M22 18v4M34 18v4M18 26h20" stroke="#005691" stroke-width="2" stroke-linecap="round"/>
-                  <!-- Check -->
-                  <path d="M23 30l3 3 6-6" stroke="#005691" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
-                </svg>
-                <h3>Entrega em até 7 dias</h3>
-                <p>Roteiro claro, processo ágil e prazos cumpridos. Você aprova o layout antes do desenvolvimento.</p>
-              </div>
-              <div class="beneficio-card">
-                <svg class="beneficio-icon" viewBox="0 0 56 56" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-                  <circle cx="28" cy="28" r="28" fill="#d1fae5"/>
-                  <!-- Raio de velocidade -->
-                  <path d="M28 15l-3 11h6l-3 15" stroke="#10b981" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
-                  <!-- Círculo externo velocímetro -->
-                  <path d="M18 28a10 10 0 0 1 20 0" stroke="#10b981" stroke-width="2" stroke-linecap="round" fill="none" opacity="0.5"/>
-                </svg>
-                <h3>Performance que carrega rápido</h3>
-                <p>Código leve, imagens otimizadas e boas práticas de Core Web Vitals (LCP/INP/CLS).</p>
-              </div>
-              <div class="beneficio-card">
-                <svg class="beneficio-icon" viewBox="0 0 56 56" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-                  <circle cx="28" cy="28" r="28" fill="#e0e7ff"/>
-                  <!-- Plugue/Conexão -->
-                  <circle cx="22" cy="24" r="3" fill="#005691"/>
-                  <circle cx="34" cy="24" r="3" fill="#005691"/>
-                  <circle cx="22" cy="32" r="3" fill="#005691"/>
-                  <circle cx="34" cy="32" r="3" fill="#005691"/>
-                  <!-- Linhas conectando -->
-                  <path d="M25 24h6M25 32h6M22 27v2M34 27v2" stroke="#005691" stroke-width="2" stroke-linecap="round"/>
-                  <!-- Gráfico pequeno -->
-                  <path d="M26 36l2 2 3-4" stroke="#005691" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-                </svg>
-                <h3>Integrações e mensuração</h3>
-                <p>Formulários + WhatsApp, CRM, GA4/GTM, pixels e UTMs — rastreio completo desde o dia 1.</p>
-              </div>
-              <div class="beneficio-card">
-                <svg class="beneficio-icon" viewBox="0 0 56 56" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-                  <circle cx="28" cy="28" r="28" fill="#d1fae5"/>
-                  <!-- Documento -->
-                  <rect x="19" y="18" width="14" height="18" rx="2" stroke="#10b981" stroke-width="2" fill="none"/>
-                  <path d="M23 24h8M23 28h8M23 32h5" stroke="#10b981" stroke-width="1.5" stroke-linecap="round"/>
-                  <!-- Lupa (SEO) -->
-                  <circle cx="33" cy="33" r="4" stroke="#10b981" stroke-width="2" fill="none"/>
-                  <path d="M36 36l3 3" stroke="#10b981" stroke-width="2" stroke-linecap="round"/>
-                </svg>
-                <h3>Copy & SEO</h3>
-                <p>Texto pensado para conversão, SEO on-page, FAQ de objeções e microcopys de privacidade.</p>
-              </div>
-            </div>
-          </div>
-        </section>
-      `;
-      
-      // ========== SEÇÃO "COMO FUNCIONA" SEM IMAGENS ==========
-      const comoFuncionaHTML = `
-        <section class="como-funciona" id="como-funciona">
-          <div class="container">
-            <div class="como-funciona-header">
-              <h2>Três passos para sua landing page <strong>começar a vender</strong></h2>
-            </div>
-            <div class="passos">
-              <div class="passo">
-                <div class="passo-numero">1</div>
-                <h3>Briefing Rápido</h3>
-                <p>Entendemos público, oferta e objetivo da campanha. Definimos a arquitetura da página e os eventos que serão medidos.</p>
-              </div>
-              <div class="passo">
-                <div class="passo-numero">2</div>
-                <h3>Mão na Massa</h3>
-                <p>Você aprova a estrutura e o layout. Codificamos com foco em velocidade, acessibilidade e mobile-first.</p>
-              </div>
-              <div class="passo">
-                <div class="passo-numero">3</div>
-                <h3>Tudo Pronto</h3>
-                <p>Configuramos pixels, GA4/GTM e UTMs. Publicamos e você já acompanha as conversões em tempo real.</p>
-              </div>
-            </div>
-          </div>
-        </section>
-      `;
+    // ========== CTA STICKY CONTROLLER ==========
+    (function() {
+      'use strict';
 
-      const faqHTML = `
-        <section class="faq">
-          <div class="container">
-            <div class="faq-header">
-              <h2>Perguntas frequentes</h2>
-            </div>
-            <div class="faq-list">
-              <details>
-                <summary><span>Em quanto tempo minha landing page fica pronta?</span></summary>
-                <div>Até 7 dias. Nosso processo é enxuto: briefing → wireframe/copy → design → desenvolvimento → integrações → go-live.</div>
-              </details>
-              
-              <details>
-                <summary><span>O que está incluso no serviço?</span></summary>
-                <div>Copywriting, design responsivo, desenvolvimento, otimização de performance, SEO on-page, integrações (formulário/WhatsApp/CRM/GA4/GTM), configuração de pixels/UTMs, QA e publicação.</div>
-              </details>
-              
-              <details>
-                <summary><span>Vocês fazem o texto ou preciso enviar?</span></summary>
-                <div>Nós escrevemos a copy com base no seu briefing. Se já houver conteúdo, refinamos para conversão.</div>
-              </details>
-              
-              <details>
-                <summary><span>Quantas revisões estão incluídas?</span></summary>
-                <div>Duas rodadas de ajustes (layout e versão final). Precisa de algo além? Oferecemos pacote de melhorias contínuas.</div>
-              </details>
-              
-            </div>
-          </div>
-        </section>
-      `;
-      
-      const ctaFinalHTML = `
-        <section class="cta-final">
-          <div class="container">
-            <h2>Pronto para colocar seu site para trabalhar por você?</h2>
-            <p>Junte-se a centenas de empresas que já estão colhendo os benefícios de um site que realmente converte. Faça um orçamento agora mesmo!</p>
-            <a href="https://api.whatsapp.com/send?phone=5511956042276&text=Ol%C3%A1%2C+vim+pelo+site+e+gostaria+de+saber+mais+sobre+o+servi%C3%A7o+de+voc%C3%AAs." class="btn-cta-final">
-              Fazer Orçamento Grátis
-              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-                <path d="M5 12h14m0 0l-7-7m7 7l-7 7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-              </svg>
-            </a>
-          </div>
-        </section>
+      const ctaSticky = document.getElementById('cta-sticky');
+      if (!ctaSticky) return;
 
-        <a href="https://api.whatsapp.com/send?phone=5511956042276&text=Ol%C3%A1%2C+vim+pelo+site+e+gostaria+de+saber+mais+sobre+o+servi%C3%A7o+de+voc%C3%AAs." 
-           class="whatsapp-float" 
-           target="_blank" 
-           rel="noopener"
-           aria-label="Falar no WhatsApp">
-            <svg viewBox="0 0 24 24" fill="currentColor">
-                <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893A11.821 11.821 0 0020.885 3.726"/>
-            </svg>
-        </a>
-      `;
-      
-      main.insertAdjacentHTML('beforeend', provaHTML);
-      main.insertAdjacentHTML('beforeend', beneficiosHTML);
-      main.insertAdjacentHTML('beforeend', comoFuncionaHTML);
-      main.insertAdjacentHTML('beforeend', ctaFinalHTML);
-      main.insertAdjacentHTML('beforeend', faqHTML);
-      
-      const footerHTML = `
-        <footer>
-          <div class="container">
-            <div class="footer-content">
-              <div class="footer-logo">
-                  <a href="/" class="logo" aria-label="Página inicial">
-                    <img src="assets/logo.webp" class="logo--white" width="160" height="40" alt="Timplu Tecnologia">
-                  </a>
-                <p style="color:var(--text-light);font-size:0.9375rem;margin-top:var(--space-sm)">Desenvolvemos seu site profissional em poucos dias, com design que encanta e desempenho que converte!</p>
-              </div>
-              <div class="footer-links">
-                <h4>Contato</h4>
-                <ul>
-                  <li><a href="https://api.whatsapp.com/send?phone=5511956042276&text=Ol%C3%A1%2C+vim+pelo+site+e+gostaria+de+saber+mais+sobre+o+servi%C3%A7o+de+voc%C3%AAs.">WhatsApp</a></li>
-                  <li><a href="mailto:timplu.tecnologia@gmail.com">E-mail</a></li>
-                </ul>
-              </div>
-            </div>
-            <div class="footer-bottom">
-              <p>&copy; 2025 Timplu Tecnologia - Todos os direitos reservados.</p>
-            </div>
-          </div>
-        </footer>
-      `;
+      let lastScroll = 0;
+      const heroHeight = 600; // Aproximadamente a altura do hero
 
-      document.body.insertAdjacentHTML('beforeend', footerHTML);
-      
-      document.addEventListener('scroll', function() {}, { passive: true });
-    });
+      function handleScroll() {
+        const currentScroll = window.pageYOffset || document.documentElement.scrollTop;
 
+        // Mostra CTA sticky quando usuário rolar para baixo após o hero
+        if (currentScroll > heroHeight && currentScroll > lastScroll) {
+          ctaSticky.setAttribute('aria-hidden', 'false');
+        } else if (currentScroll < heroHeight) {
+          ctaSticky.setAttribute('aria-hidden', 'true');
+        }
+
+        lastScroll = currentScroll <= 0 ? 0 : currentScroll;
+      }
+
+      // Throttle scroll event (performance)
+      let ticking = false;
+      window.addEventListener('scroll', function() {
+        if (!ticking) {
+          window.requestAnimationFrame(function() {
+            handleScroll();
+            ticking = false;
+          });
+          ticking = true;
+        }
+      }, { passive: true });
+    })();
   </script>
   
   <script type="application/ld+json">
@@ -716,151 +760,6 @@ img { max-width: 100%; height: auto; }
     ]
   }
   </script>
-  
-  <!-- ========== MODAL DE VÍDEO YOUTUBE (TIMPLU) ========== -->
-  <div id="timplu-video-modal" class="timplu-video-modal" role="dialog" aria-hidden="true" aria-label="Vídeo de projetos da Timplu">
-    <div class="timplu-video-modal__backdrop" data-timplu-close></div>
-    <div class="timplu-video-modal__container">
-      <button class="timplu-video-modal__close" data-timplu-close aria-label="Fechar modal">
-        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-          <line x1="18" y1="6" x2="6" y2="18"></line>
-          <line x1="6" y1="6" x2="18" y2="18"></line>
-        </svg>
-      </button>
-      <div class="timplu-video-modal__video-wrapper">
-        <iframe 
-          id="timplu-video-iframe" 
-          src="" 
-          title="Vídeo de projetos da Timplu"
-          frameborder="0" 
-          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-          allowfullscreen
-          loading="lazy"
-        ></iframe>
-      </div>
-    </div>
-  </div>
-
-  <style>
-    /* ========== MODAL DE VÍDEO - ESTILOS ========== */
-    .timplu-video-modal {
-      display: none;
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      z-index: 9999;
-      overflow: hidden;
-    }
-    
-    .timplu-video-modal[aria-hidden="false"] {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-    }
-    
-    .timplu-video-modal__backdrop {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background: rgba(0, 0, 0, 0.9);
-      cursor: pointer;
-      backdrop-filter: blur(4px);
-    }
-    
-    .timplu-video-modal__container {
-      position: relative;
-      width: 90%;
-      max-width: 1000px;
-      z-index: 10000;
-      animation: timplu-modal-fade-in 0.3s ease-out;
-    }
-    
-    @keyframes timplu-modal-fade-in {
-      from {
-        opacity: 0;
-        transform: scale(0.95) translateY(20px);
-      }
-      to {
-        opacity: 1;
-        transform: scale(1) translateY(0);
-      }
-    }
-    
-    .timplu-video-modal__close {
-      position: absolute;
-      top: -40px;
-      right: 0;
-      background: rgba(255, 255, 255, 0.9);
-      border: none;
-      border-radius: 50%;
-      width: 36px;
-      height: 36px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      cursor: pointer;
-      transition: all 0.2s ease;
-      z-index: 10001;
-      color: #0f172a;
-    }
-    
-    .timplu-video-modal__close:hover {
-      background: #fff;
-      transform: scale(1.1);
-    }
-    
-    .timplu-video-modal__close:focus-visible {
-      outline: 2px solid #005691;
-      outline-offset: 2px;
-    }
-    
-    .timplu-video-modal__video-wrapper {
-      position: relative;
-      width: 100%;
-      padding-bottom: 56.25%; /* Aspect ratio 16:9 */
-      background: #000;
-      border-radius: 8px;
-      overflow: hidden;
-      box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5);
-    }
-    
-    .timplu-video-modal__video-wrapper iframe {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-    }
-    
-    /* Mobile adjustments */
-    @media (max-width: 768px) {
-      .timplu-video-modal__container {
-        width: 95%;
-      }
-      
-      .timplu-video-modal__close {
-        top: -50px;
-        width: 40px;
-        height: 40px;
-      }
-    }
-    
-    /* Prevent body scroll when modal is open */
-    body.timplu-modal-open {
-      overflow: hidden;
-    }
-    
-    /* Reduced motion */
-    @media (prefers-reduced-motion: reduce) {
-      .timplu-video-modal__container {
-        animation: none;
-      }
-    }
-  </style>
   
 </body>
 </html>
