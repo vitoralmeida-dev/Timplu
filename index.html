@@ -1,0 +1,866 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="x-ua-compatible" content="IE=edge">
+  <meta name="referrer" content="strict-origin-when-cross-origin">
+  <meta name="theme-color" content="#005691">
+
+  <!-- Favicon -->
+
+  <link rel="icon" type="image/png" href="assets/favicon-96x96.png" sizes="96x96" />
+  <link rel="icon" type="image/svg+xml" href="assets/favicon.svg" />
+  <link rel="shortcut icon" href="assets/favicon.ico" />
+  <link rel="apple-touch-icon" sizes="180x180" href="assets/apple-touch-icon.png" />
+  <meta name="apple-mobile-web-app-title" content="Timplu" />
+  <link rel="manifest" href="assets/site.webmanifest" />
+  
+  <!-- SEO -->
+  <title>Crie seu Site Profissional - TImplu Tecnologia</title>
+  <meta name="description" content="Desenvolvemos landing pages profissionais em até 7 dias, com copy orientada a vendas, desempenho veloz e rastreio completo.">
+  <meta name="robots" content="index,follow">
+  <link rel="canonical" href="https://timplu.com.br/">
+  
+  <!-- Open Graph -->
+  <meta property="og:title" content="Timplu – Landing Pages Profissionais em 7 dias">
+  <meta property="og:description" content="Desenhamos e desenvolvemos landing pages em poucos dias, com copy orientada a vendas e performance otimizada.">
+  <meta property="og:image" content="https://timplu.com.br/assets/og-image.jpg">
+  <meta property="og:url" content="https://timplu.com.br/">
+  <meta property="og:type" content="website">
+  
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Timplu – Landing Pages Profissionais">
+  <meta name="twitter:description" content="Seu site no ar em até 7 dias - rápido, bonito e feito para converter.">
+  <meta name="twitter:image" content="https://timplu.com.br/assets/twitter-image.jpg">
+  
+  <!-- CSS Crítico Inline (≤10KB: reset + hero + above-fold) -->
+  <style>
+    /* ========== RESET & BASE ========== */
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+    html{-webkit-text-size-adjust:100%;-moz-tab-size:4;tab-size:4;scroll-behavior:smooth}
+    body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;line-height:1.6;color:#0f172a;background:#fff;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale}
+    img,picture,video,canvas,svg{display:block;max-width:100%}
+    input,button,textarea,select{font:inherit}
+    button{cursor:pointer;border:none;background:none}
+    a{text-decoration:none;color:inherit}
+    ul,ol{list-style:none}
+    
+    /* ========== TOKENS CSS ========== */
+    :root{
+      --brand:#005691;
+      --brand-dark:#013d66;
+      --brand-light:#e0e7ff;
+      --accent:#10b981;
+      --bg:#fff;
+      --bg-light:#f9fafb;
+      --bg-dark:#0f172a;
+      --text:#0f172a;
+      --text-secondary:#64748b;
+      --text-light:#f1f5f9;
+      --success:#10b981;
+      --error:#ef4444;
+      --border:#e2e8f0;
+      --space-xs:8px;
+      --space-sm:16px;
+      --space-md:24px;
+      --space-lg:32px;
+      --space-xl:48px;
+      --space-2xl:64px;
+      --space-3xl:96px;
+      --shadow-sm:0 1px 2px 0 rgb(0 0 0/0.05);
+      --shadow-md:0 4px 6px -1px rgb(0 0 0/0.1);
+      --shadow-lg:0 10px 15px -3px rgb(0 0 0/0.1);
+    }
+    
+    /* ========== TIPOGRAFIA FLUIDA ========== */
+    h1{font-size:clamp(2.5rem,5vw,4rem);line-height:1.1;font-weight:700;letter-spacing:-0.02em}
+    h2{font-size:clamp(2rem,4vw,3rem);line-height:1.2;font-weight:700;letter-spacing:-0.01em;margin-bottom:var(--space-md)}
+    h3{font-size:clamp(1.5rem,3vw,2rem);line-height:1.3;font-weight:600;margin-bottom:var(--space-sm)}
+    p{font-size:clamp(1rem,1.5vw,1.125rem);line-height:1.7;color:var(--text-secondary)}
+    small{font-size:0.875rem;line-height:1.5}
+    
+    /* ========== CONTAINER & GRID ========== */
+    .container{width:100%;max-width:1280px;margin:0 auto;padding:0 20px}
+    @media(min-width:768px){.container{padding:0 40px}}
+    @media(min-width:1280px){.container{max-width:1440px}}
+    
+    /* ========== SKIP LINK ========== */
+    .skip-link{position:absolute;left:-9999px;top:auto;background:#fff;color:var(--brand);padding:8px 12px;border:2px solid var(--brand);border-radius:4px;font-weight:600;z-index:1000}
+    .skip-link:focus{left:16px;top:16px}
+    
+    /* ========== HEADER ========== */
+    header{background:var(--bg);border-bottom:1px solid var(--border);position:sticky;top:0;z-index:100;backdrop-filter:blur(8px);background:rgba(255,255,255,0.95)}
+    .header-content{display:flex;align-items:center;justify-content:space-between;height:72px}
+    .logo{display:flex;align-items:center;gap:8px}
+    .logo svg{width:160px;height:40px}
+    .header-cta{display:none}
+    @media(min-width:768px){
+      .header-cta{display:block}
+      .btn-header{background:var(--brand);color:#fff;padding:10px 20px;border-radius:6px;font-weight:600;font-size:0.9375rem;transition:background 200ms}
+      .btn-header:hover{background:var(--brand-dark)}
+    }
+    
+    /* ========== HERO (ABOVE FOLD) ========== */
+    .hero{padding:var(--space-2xl) 0;background:linear-gradient(135deg,#fafafa 0%,#fff 100%)}
+    @media(min-width:1024px){.hero{padding:var(--space-3xl) 0}}
+    .hero-grid{display:grid;gap:var(--space-xl);align-items:center}
+    @media(min-width:1024px){.hero-grid{grid-template-columns:1fr 1fr;gap:var(--space-2xl)}}
+    .hero-content h1{margin-bottom:var(--space-md);color:var(--text)}
+    .hero-content p{margin-bottom:var(--space-lg);font-size:1.125rem}
+    .hero-cta{display:flex;flex-direction:column;gap:var(--space-sm)}
+    @media(min-width:640px){.hero-cta{flex-direction:row;align-items:center;gap:var(--space-md)}}
+    .btn-primary{background:var(--brand);color:#fff;padding:16px 32px;border-radius:8px;font-weight:600;font-size:1.0625rem;display:inline-flex;align-items:center;gap:8px;transition:all 200ms;box-shadow:var(--shadow-md)}
+    .btn-primary:hover{background:var(--brand-dark);transform:translateY(-2px);box-shadow:var(--shadow-lg)}
+    .btn-primary:focus-visible{outline:2px solid var(--brand);outline-offset:4px}
+    .btn-secondary{color:var(--text-secondary);font-weight:500;text-decoration:underline;text-underline-offset:4px;transition:color 200ms}
+    .btn-secondary:hover{color:var(--brand)}
+    .hero-image{position:relative;aspect-ratio:16/9;overflow:hidden;}
+    .hero-image img{width:100%;height:100%;object-fit:cover}
+    
+    /* ========== FOCUS VISIBLE ========== */
+    *:focus-visible{outline:2px solid var(--brand);outline-offset:2px;border-radius:4px}
+    
+    /* ========== MOTION PREFERENCES ========== */
+    @media(prefers-reduced-motion:reduce){
+      *,*::before,*::after{animation:none!important;transition:none!important;scroll-behavior:auto!important}
+    }
+  </style>
+<style>
+
+/* ==== RESPONSIVE PATCH v1 (grids & responsiveness) ==== */
+
+section { padding-top: var(--space-2xl); padding-bottom: var(--space-2xl); }
+
+/* Benefícios grid */
+.beneficios-grid {
+  display: grid;
+  gap: var(--space-lg);
+  grid-template-columns: 1fr;
+}
+@media(min-width:640px){
+  .beneficios-grid { grid-template-columns: repeat(2, 1fr); }
+}
+@media(min-width:1024px){
+  .beneficios-grid { grid-template-columns: repeat(4, 1fr); }
+}
+.beneficio-card {
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: var(--space-lg);
+  background: var(--bg);
+  box-shadow: var(--shadow-sm);
+}
+
+/* Como funciona: timeline/grid SEM IMAGENS */
+.como-funciona-steps,
+.como-funciona .passos {
+  display: grid;
+  gap: var(--space-2xl);
+  grid-template-columns: 1fr;
+}
+@media(min-width:1024px){
+  .como-funciona-steps,
+  .como-funciona .passos { grid-template-columns: repeat(3, 1fr); }
+}
+.passo {
+  display: grid;
+  gap: var(--space-sm);
+  align-content: start;
+  text-align: center;
+}
+
+/* Casos de uso */
+.casos-grid {
+  display: grid;
+  gap: var(--space-lg);
+  grid-template-columns: 1fr;
+}
+@media(min-width:1024px){
+  .casos-grid { grid-template-columns: repeat(3, 1fr); }
+}
+.caso-card {
+  background: var(--bg);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: var(--shadow-sm);
+}
+.caso-imagem img { width: 100%; height: auto; display: block; }
+
+/* Integrações (12 logos) */
+.integracoes-grid {
+  display: grid;
+  gap: var(--space-md);
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+@media(min-width:640px){
+  .integracoes-grid { grid-template-columns: repeat(4, 1fr); }
+}
+@media(min-width:1024px){
+  .integracoes-grid { grid-template-columns: repeat(6, 1fr); }
+}
+.integracao-item {
+  background: var(--bg-light);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: var(--space-sm);
+  display: grid;
+  place-items: center;
+  min-height: 80px;
+}
+
+/* Oferta (form + texto) */
+.oferta-grid {
+  display: grid;
+  gap: var(--space-xl);
+  grid-template-columns: 1fr;
+}
+@media(min-width:1024px){
+  .oferta-grid { grid-template-columns: 5fr 7fr; }
+}
+.oferta-texto p { color: var(--text-secondary); }
+.form {
+  display: grid;
+  gap: var(--space-md);
+}
+
+/* FAQ */
+.faq-list {
+  display: grid;
+  gap: var(--space-md);
+  max-width: 800px;
+  margin-inline: auto;
+}
+.faq details summary {
+  padding: var(--space-md);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  background: var(--bg);
+}
+.faq details[open] { border-color: var(--brand-light); }
+
+/* CTA final */
+.cta-final .selos {
+  display: grid;
+  gap: var(--space-md);
+  grid-template-columns: 1fr;
+}
+@media(min-width:640px){
+  .cta-final .selos { grid-template-columns: repeat(3, 1fr); }
+}
+
+/* Footer responsiveness */
+footer .footer-grid, .rodape .footer-grid {
+  display: grid;
+  gap: var(--space-lg);
+  grid-template-columns: 1fr;
+}
+@media(min-width:1024px){
+  footer .footer-grid, .rodape .footer-grid { grid-template-columns: repeat(3, 1fr); }
+}
+
+img { max-width: 100%; height: auto; }
+
+@media(max-width:639px){
+  .btn-primary, .btn-secondary, .btn-cta-final { padding: 14px 18px; }
+}
+
+</style>
+
+</head>
+
+<body>
+  
+  <a class="skip-link" href="#conteudo">Pular para o conteúdo</a>
+  
+  <header>
+    <div class="container">
+      <div class="header-content">
+          <a href="/" class="logo" aria-label="Página inicial">
+            <img src="assets/logo.webp" width="160" height="40" alt="Timplu Tecnologia">
+          </a>
+        <div class="header-cta">
+          <a href="https://api.whatsapp.com/send?phone=5511956042276&text=Ol%C3%A1%2C+vim+pelo+site+e+gostaria+de+saber+mais+sobre+o+servi%C3%A7o+de+voc%C3%AAs." class="btn-header">Falar com Especialista</a>
+        </div>
+      </div>
+    </div>
+  </header>
+  
+  <main id="conteudo">
+    
+    <section class="hero">
+      <div class="container">
+        <div class="hero-grid">
+          <div class="hero-content">
+            <h1>Seu site no ar em até 7 dias - rápido, bonito e <strong>feito para converter</strong></h1>
+            <p>Desenhamos e desenvolvemos <strong>landing pages profissionais</strong> em poucos dias, com copy orientada a vendas, desempenho veloz e rastreio completo para você medir cada clique.</p>
+            <div class="hero-cta">
+              <a href="https://api.whatsapp.com/send?phone=5511956042276&text=Ol%C3%A1%2C+vim+pelo+site+e+gostaria+de+saber+mais+sobre+o+servi%C3%A7o+de+voc%C3%AAs." class="btn-primary">
+                Fazer Orçamento Gratuito
+                <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                  <path d="M4 10h12m0 0l-5-5m5 5l-5 5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </a>
+            </div>
+          </div>
+          <div class="hero-image">
+            <picture>
+              <img src="assets/timplu-hero.webp" alt="Dashboard de exemplo de landing page da Timplu" width="1200" height="675" fetchpriority="high" decoding="async">
+            </picture>
+          </div>
+        </div>
+      </div>
+    </section>
+    
+  </main>
+  
+  <style>
+
+        .whatsapp-float {
+            position: fixed;
+            bottom: 2rem;
+            right: 2rem;
+            background: #25d366;
+            color: white;
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+            box-shadow: 0 4px 12px rgba(37, 211, 102, 0.4);
+            transition: all 0.2s ease;
+            z-index: 100;
+        }
+        .whatsapp-float:hover {
+            transform: scale(1.1);
+            box-shadow: 0 6px 16px rgba(37, 211, 102, 0.6);
+        }
+        .whatsapp-float svg {
+            width: 28px;
+            height: 28px;
+        }
+
+          .logo img { width:130px; height:60px; display:block; }
+          .logo--white{
+        filter: brightness(0) saturate(100%) invert(1);
+        }
+
+
+    .prova-social{padding:var(--space-xl) 0;background:var(--bg-light);border-top:1px solid var(--border);border-bottom:1px solid var(--border)}
+    .prova-social-header{text-align:center;margin-bottom:var(--space-md)}
+    .prova-social-header small{color:var(--text-secondary);text-transform:uppercase;letter-spacing:0.05em;font-weight:600}
+    .prova-social-metrica{font-size:1.25rem;font-weight:700;color:var(--text);margin-top:var(--space-xs)}
+    .prova-logos{display:grid;grid-template-columns:repeat(3,1fr);gap:var(--space-md);margin:var(--space-lg) 0;align-items:center;justify-items:center}
+    @media(min-width:768px){.prova-logos{grid-template-columns:repeat(6,1fr)}}
+    .prova-logos img{max-width:100px;height:auto;opacity:0.6;transition:opacity 200ms;filter:grayscale(100%)}
+    .prova-logos img:hover{opacity:1;filter:grayscale(0%)}
+    .depoimento{max-width:700px;margin:var(--space-xl) auto 0;padding:var(--space-lg);background:#fff;border-left:4px solid var(--accent);border-radius:8px;box-shadow:var(--shadow-sm)}
+    .depoimento-texto{font-style:italic;color:var(--text);margin-bottom:var(--space-md);line-height:1.7}
+    .depoimento-autor{display:flex;align-items:center;gap:var(--space-sm)}
+    .depoimento-avatar{width:48px;height:48px;border-radius:50%;object-fit:cover}
+    .depoimento-info{display:flex;flex-direction:column}
+    .depoimento-nome{font-weight:600;color:var(--text)}
+    .depoimento-cargo{font-size:0.875rem;color:var(--text-secondary)}
+    
+    .beneficios{padding:var(--space-3xl) 0}
+    .beneficios-header{text-align:center;max-width:800px;margin:0 auto var(--space-2xl)}
+    .beneficios-grid{display:grid;gap:var(--space-lg)}
+    @media(min-width:640px){.beneficios-grid{grid-template-columns:repeat(2,1fr)}}
+    @media(min-width:1024px){.beneficios-grid{grid-template-columns:repeat(4,1fr)}}
+    .beneficio-card{padding:var(--space-lg);border:1px solid var(--border);border-radius:12px;transition:all 200ms;background:#fff}
+    .beneficio-card:hover{box-shadow:var(--shadow-lg);transform:translateY(-4px)}
+    .beneficio-icon{width:56px;height:56px;margin-bottom:var(--space-md)}
+    .beneficio-card h3{font-size:1.25rem;margin-bottom:var(--space-sm);color:var(--text)}
+    .beneficio-card p{font-size:1rem;color:var(--text-secondary)}
+    
+    .como-funciona{padding:var(--space-3xl) 0;background:var(--bg-light)}
+    .como-funciona-header{text-align:center;margin-bottom:var(--space-2xl)}
+    .passos{display:grid;gap:var(--space-2xl)}
+    @media(min-width:1024px){.passos{grid-template-columns:repeat(3,1fr)}}
+    .passo{position:relative;text-align:center}
+    .passo-numero{width:64px;height:64px;background:var(--brand);color:#fff;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:1.75rem;font-weight:700;margin:0 auto var(--space-md);box-shadow:var(--shadow-md)}
+    .passo h3{color:var(--text);margin-bottom:var(--space-sm)}
+    .passo p{margin-bottom:var(--space-md);color:var(--text-secondary)}
+    
+    .casos-uso{padding:var(--space-3xl) 0}
+    .casos-header{text-align:center;margin-bottom:var(--space-2xl)}
+    .casos-grid{display:grid;gap:var(--space-lg)}
+    @media(min-width:768px){.casos-grid{grid-template-columns:repeat(2,1fr)}}
+    @media(min-width:1024px){.casos-grid{grid-template-columns:repeat(3,1fr)}}
+    .caso-card{background:#fff;border:1px solid var(--border);border-radius:12px;overflow:hidden;transition:all 200ms}
+    .caso-card:hover{box-shadow:var(--shadow-lg);transform:translateY(-4px)}
+    .caso-imagem{aspect-ratio:16/9;overflow:hidden}
+    .caso-imagem img{width:100%;height:100%;object-fit:cover;transition:transform 300ms}
+    .caso-card:hover .caso-imagem img{transform:scale(1.05)}
+    .caso-conteudo{padding:var(--space-lg)}
+    .caso-card h3{color:var(--text);margin-bottom:var(--space-sm)}
+    .caso-card p{margin-bottom:var(--space-sm)}
+    .caso-resultado{font-weight:600;color:var(--accent);font-size:0.9375rem}
+    
+    .integracoes{padding:var(--space-3xl) 0;background:var(--bg-light)}
+    .integracoes-header{text-align:center;margin-bottom:var(--space-2xl)}
+    .integracoes-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:var(--space-md)}
+    @media(min-width:640px){.integracoes-grid{grid-template-columns:repeat(4,1fr)}}
+    @media(min-width:1024px){.integracoes-grid{grid-template-columns:repeat(6,1fr)}}
+    .integracao-item{background:#fff;padding:var(--space-md);border:1px solid var(--border);border-radius:8px;display:flex;align-items:center;justify-content:center;aspect-ratio:1;transition:all 200ms;filter:grayscale(100%)}
+    .integracao-item:hover{filter:grayscale(0%);box-shadow:var(--shadow-md);transform:scale(1.05)}
+    .integracao-item svg,.integracao-item img{width:64px;height:64px}
+    
+    .oferta{padding:var(--space-3xl) 0}
+    .oferta-grid{display:grid;gap:var(--space-2xl);align-items:center}
+    @media(min-width:1024px){.oferta-grid{grid-template-columns:5fr 7fr}}
+    .oferta-texto h2{margin-bottom:var(--space-md)}
+    .oferta-texto p{font-size:1.125rem;line-height:1.7}
+    .formulario{background:var(--bg-light);padding:var(--space-xl);border-radius:12px;border:1px solid var(--border)}
+    .form-group{margin-bottom:var(--space-md)}
+    .form-group label{display:block;font-weight:600;color:var(--text);margin-bottom:var(--space-xs)}
+    .form-group input,.form-group select{width:100%;height:52px;padding:0 var(--space-md);border:2px solid var(--border);border-radius:6px;font-size:1rem;transition:border 200ms;background:#fff}
+    .form-group input:focus,.form-group select:focus{border-color:var(--brand);outline:none}
+    .form-group input.valid{border-color:var(--success)}
+    .form-group input.invalid{border-color:var(--error)}
+    .form-group .error-msg{color:var(--error);font-size:0.875rem;margin-top:var(--space-xs);display:none}
+    .form-group.has-error .error-msg{display:block}
+    .form-checkbox{display:flex;align-items:flex-start;gap:var(--space-xs);margin-bottom:var(--space-md)}
+    .form-checkbox input[type="checkbox"]{width:20px;height:20px;flex-shrink:0;margin-top:2px;cursor:pointer}
+    .form-checkbox label{font-size:0.9375rem;color:var(--text-secondary);cursor:pointer}
+    .form-checkbox a{color:var(--brand);text-decoration:underline}
+    .btn-submit{width:100%;background:var(--brand);color:#fff;padding:16px;border-radius:8px;font-weight:600;font-size:1.0625rem;display:flex;align-items:center;justify-content:center;gap:8px;transition:all 200ms;min-height:52px}
+    .btn-submit:hover:not(:disabled){background:var(--brand-dark);transform:translateY(-2px)}
+    .btn-submit:disabled{opacity:0.6;cursor:not-allowed}
+    .btn-submit:focus-visible{outline:2px solid var(--brand);outline-offset:4px}
+    .form-success{background:var(--success);color:#fff;padding:var(--space-md);border-radius:8px;text-align:center;font-weight:600;display:none}
+    .form-success.show{display:block}
+    .honeypot{position:absolute;left:-9999px;top:auto;width:1px;height:1px;overflow:hidden}
+    
+    .faq{padding:var(--space-3xl) 0;background:var(--bg-light)}
+    .faq-header{text-align:center;margin-bottom:var(--space-2xl)}
+    .faq-list{max-width:800px;margin:0 auto}
+    details{background:#fff;border:1px solid var(--border);border-radius:8px;margin-bottom:var(--space-md);overflow:hidden}
+    details summary{padding:var(--space-md);font-weight:600;color:var(--text);cursor:pointer;display:flex;align-items:center;justify-content:space-between;min-height:44px;transition:background 200ms}
+    details summary:hover{background:var(--bg-light)}
+    details summary:focus-visible{outline:2px solid var(--brand);outline-offset:-2px}
+    details summary::after{content:"+";font-size:1.5rem;color:var(--brand);transition:transform 200ms;width:24px;height:24px;display:flex;align-items:center;justify-content:center}
+    details[open] summary::after{content:"−";transform:rotate(0deg)}
+    details div{padding:0 var(--space-md) var(--space-md);color:var(--text-secondary);line-height:1.7}
+    
+    .cta-final{padding:var(--space-3xl) 0;background:var(--brand);color:#fff;text-align:center}
+    .cta-final h2{color:#fff;margin-bottom:var(--space-md)}
+    .cta-final p{color:var(--text-light);font-size:1.125rem;margin-bottom:var(--space-xl);max-width:700px;margin-left:auto;margin-right:auto}
+    .btn-cta-final{background:#fff;color:var(--brand);padding:18px 40px;border-radius:8px;font-weight:700;font-size:1.125rem;display:inline-flex;align-items:center;gap:10px;transition:all 200ms;box-shadow:0 4px 14px rgba(0,0,0,0.15)}
+    .btn-cta-final:hover{transform:scale(1.05);box-shadow:0 6px 20px rgba(0,0,0,0.2)}
+    .selos{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:var(--space-lg);margin-top:var(--space-2xl);max-width:900px;margin-left:auto;margin-right:auto}
+    .selo{display:flex;flex-direction:column;align-items:center;gap:var(--space-sm)}
+    .selo svg{width:48px;height:48px}
+    .selo span{font-size:0.875rem;color:var(--text-light)}
+    
+    footer{background:var(--bg-dark);color:var(--text-light);padding:var(--space-2xl) 0 var(--space-lg)}
+    .footer-content{display:grid;gap:var(--space-xl);margin-bottom:var(--space-xl)}
+    @media(min-width:768px){.footer-content{grid-template-columns:2fr 1fr 1fr}}
+    .footer-logo svg{width:160px;height:40px;margin-bottom:var(--space-md)}
+    .footer-links h4{font-size:1rem;font-weight:600;margin-bottom:var(--space-sm);color:#fff}
+    .footer-links ul{display:flex;flex-direction:column;gap:var(--space-xs)}
+    .footer-links a{color:var(--text-light);font-size:0.9375rem;transition:color 200ms}
+    .footer-links a:hover{color:var(--brand-light)}
+    .footer-social{display:flex;gap:var(--space-sm)}
+    .footer-social a{width:40px;height:40px;display:flex;align-items:center;justify-content:center;background:rgba(255,255,255,0.1);border-radius:50%;transition:all 200ms}
+    .footer-social a:hover{background:var(--brand);transform:translateY(-2px)}
+    .footer-social svg{width:20px;height:20px}
+    .footer-bottom{border-top:1px solid rgba(255,255,255,0.1);padding-top:var(--space-md);text-align:center}
+    .footer-bottom p{font-size:0.875rem;color:var(--text-light)}
+  </style>
+  
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      const main = document.getElementById('conteudo');
+      
+      const provaHTML = `
+        <section class="prova-social">
+          <div class="container">
+            <div class="prova-social-header">
+              <small>Confiado por equipes de todo o brasil</small>
+              <p class="prova-social-metrica">+300 empresas aceleraram resultados com landing pages da Timplu</p>
+            </div>
+            <div class="prova-logos">
+              <img src="assets/logo-grupohash.webp" alt="Grupo hash" width="100" height="40" loading="lazy" decoding="async">
+              <img src="assets/logo-zenithtech.webp" alt="Zenith Tech" width="100" height="40" loading="lazy" decoding="async">
+              <img src="assets/logo-lumina.webp" alt="Lumina Consultoria" width="100" height="40" loading="lazy" decoding="async">
+              <img src="assets/logo-venturahub.webp" alt="VenturaHub" width="100" height="40" loading="lazy" decoding="async">
+              <img src="assets/logo-quantis.webp" alt="Quantis Labs" width="100" height="40" loading="lazy" decoding="async">
+              <img src="assets/logo-nuage.webp" alt="Nuage Solutions" width="100" height="40" loading="lazy" decoding="async">
+            </div>
+            <div class="depoimento">
+              <p class="depoimento-texto">"Lançamos campanha com a LP nova e já no primeiro dia vimos o impacto: lead mais qualificado e custo por conversão menor. O processo foi rápido e sem fricção."</p>
+              <div class="depoimento-autor">
+                <img src="assets/daniela-avatar.avif" alt="" class="depoimento-avatar" width="48" height="48" loading="lazy" decoding="async">
+                <div class="depoimento-info">
+                  <span class="depoimento-nome">Daniela Sousa</span>
+                  <span class="depoimento-cargo">Coord. de Operações – Grupo Hash</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+      `;
+      
+      const beneficiosHTML = `
+        <section class="beneficios" id="beneficios">
+          <div class="container">
+            <div class="beneficios-header">
+              <h2>Menos esforço técnico, <strong>mais conversões</strong></h2>
+              <p>A Timplu combina estratégia de copy, design e performance para transformar tráfego em resultado.</p>
+            </div>
+            <div class="beneficios-grid">
+              <div class="beneficio-card">
+                <svg class="beneficio-icon" viewBox="0 0 56 56" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                  <circle cx="28" cy="28" r="28" fill="#e0e7ff"/>
+                  <!-- Calendário -->
+                  <rect x="18" y="20" width="20" height="18" rx="2" stroke="#005691" stroke-width="2" fill="none"/>
+                  <path d="M22 18v4M34 18v4M18 26h20" stroke="#005691" stroke-width="2" stroke-linecap="round"/>
+                  <!-- Check -->
+                  <path d="M23 30l3 3 6-6" stroke="#005691" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+                <h3>Entrega em até 7 dias</h3>
+                <p>Roteiro claro, processo ágil e prazos cumpridos. Você aprova o layout antes do desenvolvimento.</p>
+              </div>
+              <div class="beneficio-card">
+                <svg class="beneficio-icon" viewBox="0 0 56 56" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                  <circle cx="28" cy="28" r="28" fill="#d1fae5"/>
+                  <!-- Raio de velocidade -->
+                  <path d="M28 15l-3 11h6l-3 15" stroke="#10b981" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+                  <!-- Círculo externo velocímetro -->
+                  <path d="M18 28a10 10 0 0 1 20 0" stroke="#10b981" stroke-width="2" stroke-linecap="round" fill="none" opacity="0.5"/>
+                </svg>
+                <h3>Performance que carrega rápido</h3>
+                <p>Código leve, imagens otimizadas e boas práticas de Core Web Vitals (LCP/INP/CLS).</p>
+              </div>
+              <div class="beneficio-card">
+                <svg class="beneficio-icon" viewBox="0 0 56 56" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                  <circle cx="28" cy="28" r="28" fill="#e0e7ff"/>
+                  <!-- Plugue/Conexão -->
+                  <circle cx="22" cy="24" r="3" fill="#005691"/>
+                  <circle cx="34" cy="24" r="3" fill="#005691"/>
+                  <circle cx="22" cy="32" r="3" fill="#005691"/>
+                  <circle cx="34" cy="32" r="3" fill="#005691"/>
+                  <!-- Linhas conectando -->
+                  <path d="M25 24h6M25 32h6M22 27v2M34 27v2" stroke="#005691" stroke-width="2" stroke-linecap="round"/>
+                  <!-- Gráfico pequeno -->
+                  <path d="M26 36l2 2 3-4" stroke="#005691" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+                <h3>Integrações e mensuração</h3>
+                <p>Formulários + WhatsApp, CRM, GA4/GTM, pixels e UTMs — rastreio completo desde o dia 1.</p>
+              </div>
+              <div class="beneficio-card">
+                <svg class="beneficio-icon" viewBox="0 0 56 56" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                  <circle cx="28" cy="28" r="28" fill="#d1fae5"/>
+                  <!-- Documento -->
+                  <rect x="19" y="18" width="14" height="18" rx="2" stroke="#10b981" stroke-width="2" fill="none"/>
+                  <path d="M23 24h8M23 28h8M23 32h5" stroke="#10b981" stroke-width="1.5" stroke-linecap="round"/>
+                  <!-- Lupa (SEO) -->
+                  <circle cx="33" cy="33" r="4" stroke="#10b981" stroke-width="2" fill="none"/>
+                  <path d="M36 36l3 3" stroke="#10b981" stroke-width="2" stroke-linecap="round"/>
+                </svg>
+                <h3>Copy & SEO</h3>
+                <p>Texto pensado para conversão, SEO on-page, FAQ de objeções e microcopys de privacidade.</p>
+              </div>
+            </div>
+          </div>
+        </section>
+      `;
+      
+      // ========== SEÇÃO "COMO FUNCIONA" SEM IMAGENS ==========
+      const comoFuncionaHTML = `
+        <section class="como-funciona" id="como-funciona">
+          <div class="container">
+            <div class="como-funciona-header">
+              <h2>Três passos para sua landing page <strong>começar a vender</strong></h2>
+            </div>
+            <div class="passos">
+              <div class="passo">
+                <div class="passo-numero">1</div>
+                <h3>Briefing Rápido</h3>
+                <p>Entendemos público, oferta e objetivo da campanha. Definimos a arquitetura da página e os eventos que serão medidos.</p>
+              </div>
+              <div class="passo">
+                <div class="passo-numero">2</div>
+                <h3>Mão na Massa</h3>
+                <p>Você aprova a estrutura e o layout. Codificamos com foco em velocidade, acessibilidade e mobile-first.</p>
+              </div>
+              <div class="passo">
+                <div class="passo-numero">3</div>
+                <h3>Tudo Pronto</h3>
+                <p>Configuramos pixels, GA4/GTM e UTMs. Publicamos e você já acompanha as conversões em tempo real.</p>
+              </div>
+            </div>
+          </div>
+        </section>
+      `;
+
+      const faqHTML = `
+        <section class="faq">
+          <div class="container">
+            <div class="faq-header">
+              <h2>Perguntas frequentes</h2>
+            </div>
+            <div class="faq-list">
+              <details>
+                <summary><span>Em quanto tempo minha landing page fica pronta?</span></summary>
+                <div>Até 7 dias. Nosso processo é enxuto: briefing → wireframe/copy → design → desenvolvimento → integrações → go-live.</div>
+              </details>
+              
+              <details>
+                <summary><span>O que está incluso no serviço?</span></summary>
+                <div>Copywriting, design responsivo, desenvolvimento, otimização de performance, SEO on-page, integrações (formulário/WhatsApp/CRM/GA4/GTM), configuração de pixels/UTMs, QA e publicação.</div>
+              </details>
+              
+              <details>
+                <summary><span>Vocês fazem o texto ou preciso enviar?</span></summary>
+                <div>Nós escrevemos a copy com base no seu briefing. Se já houver conteúdo, refinamos para conversão.</div>
+              </details>
+              
+              <details>
+                <summary><span>Quantas revisões estão incluídas?</span></summary>
+                <div>Duas rodadas de ajustes (layout e versão final). Precisa de algo além? Oferecemos pacote de melhorias contínuas.</div>
+              </details>
+              
+            </div>
+          </div>
+        </section>
+      `;
+      
+      const ctaFinalHTML = `
+        <section class="cta-final">
+          <div class="container">
+            <h2>Pronto para colocar seu site para trabalhar por você?</h2>
+            <p>Junte-se a centenas de empresas que já estão colhendo os benefícios de um site que realmente converte. Faça um orçamento agora mesmo!</p>
+            <a href="https://api.whatsapp.com/send?phone=5511956042276&text=Ol%C3%A1%2C+vim+pelo+site+e+gostaria+de+saber+mais+sobre+o+servi%C3%A7o+de+voc%C3%AAs." class="btn-cta-final">
+              Fazer Orçamento Grátis
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                <path d="M5 12h14m0 0l-7-7m7 7l-7 7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </a>
+          </div>
+        </section>
+
+        <a href="https://api.whatsapp.com/send?phone=5511956042276&text=Ol%C3%A1%2C+vim+pelo+site+e+gostaria+de+saber+mais+sobre+o+servi%C3%A7o+de+voc%C3%AAs." 
+           class="whatsapp-float" 
+           target="_blank" 
+           rel="noopener"
+           aria-label="Falar no WhatsApp">
+            <svg viewBox="0 0 24 24" fill="currentColor">
+                <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893A11.821 11.821 0 0020.885 3.726"/>
+            </svg>
+        </a>
+      `;
+      
+      main.insertAdjacentHTML('beforeend', provaHTML);
+      main.insertAdjacentHTML('beforeend', beneficiosHTML);
+      main.insertAdjacentHTML('beforeend', comoFuncionaHTML);
+      main.insertAdjacentHTML('beforeend', ctaFinalHTML);
+      main.insertAdjacentHTML('beforeend', faqHTML);
+      
+      const footerHTML = `
+        <footer>
+          <div class="container">
+            <div class="footer-content">
+              <div class="footer-logo">
+                  <a href="/" class="logo" aria-label="Página inicial">
+                    <img src="assets/logo.webp" class="logo--white" width="160" height="40" alt="Timplu Tecnologia">
+                  </a>
+                <p style="color:var(--text-light);font-size:0.9375rem;margin-top:var(--space-sm)">Desenvolvemos seu site profissional em poucos dias, com design que encanta e desempenho que converte!</p>
+              </div>
+              <div class="footer-links">
+                <h4>Contato</h4>
+                <ul>
+                  <li><a href="https://api.whatsapp.com/send?phone=5511956042276&text=Ol%C3%A1%2C+vim+pelo+site+e+gostaria+de+saber+mais+sobre+o+servi%C3%A7o+de+voc%C3%AAs.">WhatsApp</a></li>
+                  <li><a href="mailto:timplu.tecnologia@gmail.com">E-mail</a></li>
+                </ul>
+              </div>
+            </div>
+            <div class="footer-bottom">
+              <p>&copy; 2025 Timplu Tecnologia - Todos os direitos reservados.</p>
+            </div>
+          </div>
+        </footer>
+      `;
+
+      document.body.insertAdjacentHTML('beforeend', footerHTML);
+      
+      document.addEventListener('scroll', function() {}, { passive: true });
+    });
+
+  </script>
+  
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Organization",
+        "name": "Timplu Tecnologia",
+        "url": "https://timplu.com.br",
+        "logo": "https://timplu.com.br/assets/logo.webp",
+        "contactPoint": {
+          "@type": "ContactPoint",
+          "contactType": "Customer Support",
+          "email": "contato@timplu.com.br"
+        }
+      },
+      {
+        "@type": "WebSite",
+        "url": "https://timplu.com.br"
+      }
+    ]
+  }
+  </script>
+  
+  <!-- ========== MODAL DE VÍDEO YOUTUBE (TIMPLU) ========== -->
+  <div id="timplu-video-modal" class="timplu-video-modal" role="dialog" aria-hidden="true" aria-label="Vídeo de projetos da Timplu">
+    <div class="timplu-video-modal__backdrop" data-timplu-close></div>
+    <div class="timplu-video-modal__container">
+      <button class="timplu-video-modal__close" data-timplu-close aria-label="Fechar modal">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <line x1="18" y1="6" x2="6" y2="18"></line>
+          <line x1="6" y1="6" x2="18" y2="18"></line>
+        </svg>
+      </button>
+      <div class="timplu-video-modal__video-wrapper">
+        <iframe 
+          id="timplu-video-iframe" 
+          src="" 
+          title="Vídeo de projetos da Timplu"
+          frameborder="0" 
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+          allowfullscreen
+          loading="lazy"
+        ></iframe>
+      </div>
+    </div>
+  </div>
+
+  <style>
+    /* ========== MODAL DE VÍDEO - ESTILOS ========== */
+    .timplu-video-modal {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: 9999;
+      overflow: hidden;
+    }
+    
+    .timplu-video-modal[aria-hidden="false"] {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    
+    .timplu-video-modal__backdrop {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.9);
+      cursor: pointer;
+      backdrop-filter: blur(4px);
+    }
+    
+    .timplu-video-modal__container {
+      position: relative;
+      width: 90%;
+      max-width: 1000px;
+      z-index: 10000;
+      animation: timplu-modal-fade-in 0.3s ease-out;
+    }
+    
+    @keyframes timplu-modal-fade-in {
+      from {
+        opacity: 0;
+        transform: scale(0.95) translateY(20px);
+      }
+      to {
+        opacity: 1;
+        transform: scale(1) translateY(0);
+      }
+    }
+    
+    .timplu-video-modal__close {
+      position: absolute;
+      top: -40px;
+      right: 0;
+      background: rgba(255, 255, 255, 0.9);
+      border: none;
+      border-radius: 50%;
+      width: 36px;
+      height: 36px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      transition: all 0.2s ease;
+      z-index: 10001;
+      color: #0f172a;
+    }
+    
+    .timplu-video-modal__close:hover {
+      background: #fff;
+      transform: scale(1.1);
+    }
+    
+    .timplu-video-modal__close:focus-visible {
+      outline: 2px solid #005691;
+      outline-offset: 2px;
+    }
+    
+    .timplu-video-modal__video-wrapper {
+      position: relative;
+      width: 100%;
+      padding-bottom: 56.25%; /* Aspect ratio 16:9 */
+      background: #000;
+      border-radius: 8px;
+      overflow: hidden;
+      box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5);
+    }
+    
+    .timplu-video-modal__video-wrapper iframe {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+    }
+    
+    /* Mobile adjustments */
+    @media (max-width: 768px) {
+      .timplu-video-modal__container {
+        width: 95%;
+      }
+      
+      .timplu-video-modal__close {
+        top: -50px;
+        width: 40px;
+        height: 40px;
+      }
+    }
+    
+    /* Prevent body scroll when modal is open */
+    body.timplu-modal-open {
+      overflow: hidden;
+    }
+    
+    /* Reduced motion */
+    @media (prefers-reduced-motion: reduce) {
+      .timplu-video-modal__container {
+        animation: none;
+      }
+    }
+  </style>
+  
+</body>
+</html>
