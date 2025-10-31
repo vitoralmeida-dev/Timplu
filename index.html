@@ -34,7 +34,19 @@
   <meta name="twitter:title" content="Timplu – Landing Pages Profissionais">
   <meta name="twitter:description" content="Seu site no ar em até 7 dias - rápido, bonito e feito para converter.">
   <meta name="twitter:image" content="https://timplu.com.br/assets/twitter-image.jpg">
-  
+
+  <!-- Google Analytics 4 -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-XXXXXXXXXX', {
+      'send_page_view': true,
+      'anonymize_ip': true
+    });
+  </script>
+
   <!-- CSS Crítico Inline (≤10KB: reset + hero + above-fold) -->
   <style>
     /* ========== RESET & BASE ========== */
@@ -714,9 +726,6 @@ img { max-width: 100%; height: auto; }
     
     .beneficios{padding:var(--space-3xl) 0}
     .beneficios-header{text-align:center;max-width:800px;margin:0 auto var(--space-2xl)}
-    .beneficios-grid{display:grid;gap:var(--space-lg)}
-    @media(min-width:640px){.beneficios-grid{grid-template-columns:repeat(2,1fr)}}
-    @media(min-width:1024px){.beneficios-grid{grid-template-columns:repeat(4,1fr)}}
     .beneficio-card{padding:var(--space-lg);border:1px solid var(--border);border-radius:12px;transition:all 200ms;background:#fff}
     .beneficio-card:hover{box-shadow:var(--shadow-lg);transform:translateY(-4px)}
     .beneficio-icon{width:56px;height:56px;margin-bottom:var(--space-md)}
@@ -725,8 +734,6 @@ img { max-width: 100%; height: auto; }
     
     .como-funciona{padding:var(--space-3xl) 0;background:var(--bg-light)}
     .como-funciona-header{text-align:center;margin-bottom:var(--space-2xl)}
-    .passos{display:grid;gap:var(--space-2xl)}
-    @media(min-width:1024px){.passos{grid-template-columns:repeat(3,1fr)}}
     .passo{position:relative;text-align:center}
     .passo-numero{width:64px;height:64px;background:var(--brand);color:#fff;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:1.75rem;font-weight:700;margin:0 auto var(--space-md);box-shadow:var(--shadow-md)}
     .passo h3{color:var(--text);margin-bottom:var(--space-sm)}
@@ -1064,6 +1071,89 @@ img { max-width: 100%; height: auto; }
     })();
   </script>
 
+  <script>
+    // ========== UNIFIED TRACKING (GA4 + PIXEL) ==========
+    (function() {
+      'use strict';
+
+      // Helper to send events
+      function trackEvent(eventName, params) {
+        if (window.gtag) {
+          gtag('event', eventName, params);
+        }
+        // Add Facebook Pixel here if needed
+        // if (window.fbq) fbq('track', eventName, params);
+      }
+
+      // ========== 1. CTA CLICKS ==========
+      document.addEventListener('click', function(e) {
+        const target = e.target.closest('[data-event]');
+        if (!target) return;
+
+        const eventName = target.getAttribute('data-event');
+        const location = target.getAttribute('data-location') || 'unknown';
+
+        if (eventName === 'cta_click') {
+          trackEvent('cta_click', {
+            event_category: 'engagement',
+            event_label: location,
+            value: location === 'hero' ? 10 : location === 'sticky' ? 8 : 5
+          });
+        } else if (eventName === 'whatsapp_click') {
+          trackEvent('whatsapp_click', {
+            event_category: 'engagement',
+            event_label: 'float_button'
+          });
+        }
+      });
+
+      // ========== 2. SCROLL DEPTH ==========
+      let scrollTracked = {
+        '25': false,
+        '50': false,
+        '75': false,
+        '90': false
+      };
+
+      function trackScrollDepth() {
+        const scrollPercent = Math.round((window.scrollY / (document.documentElement.scrollHeight - window.innerHeight)) * 100);
+
+        Object.keys(scrollTracked).forEach(function(threshold) {
+          if (scrollPercent >= parseInt(threshold) && !scrollTracked[threshold]) {
+            scrollTracked[threshold] = true;
+            trackEvent('scroll_depth', {
+              event_category: 'engagement',
+              event_label: threshold + '%',
+              value: parseInt(threshold)
+            });
+          }
+        });
+      }
+
+      let scrollTicking = false;
+      window.addEventListener('scroll', function() {
+        if (!scrollTicking) {
+          window.requestAnimationFrame(function() {
+            trackScrollDepth();
+            scrollTicking = false;
+          });
+          scrollTicking = true;
+        }
+      }, { passive: true });
+
+      // ========== 3. FORM ERROR TRACKING ==========
+      // This will be called from form validation script
+      window.trackFormError = function(fieldName, errorMsg) {
+        trackEvent('form_error', {
+          event_category: 'form',
+          event_label: fieldName,
+          error_message: errorMsg
+        });
+      };
+
+    })();
+  </script>
+
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -1082,6 +1172,51 @@ img { max-width: 100%; height: auto; }
       {
         "@type": "WebSite",
         "url": "https://timplu.com.br"
+      },
+      {
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "Em quanto tempo minha landing page fica pronta?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Até 7 dias. Nosso processo é enxuto: briefing → wireframe/copy → design → desenvolvimento → integrações → go-live."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "O que está incluso no serviço?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Copywriting, design responsivo, desenvolvimento, otimização de performance, SEO on-page, integrações (formulário/WhatsApp/CRM/GA4/GTM), configuração de pixels/UTMs, QA e publicação."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Vocês fazem o texto ou preciso enviar?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Nós escrevemos a copy com base no seu briefing. Se já houver conteúdo, refinamos para conversão."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Quantas revisões estão incluídas?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Duas rodadas de ajustes (layout e versão final). Precisa de algo além? Oferecemos pacote de melhorias contínuas."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Preciso ter um domínio e hospedagem?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Não obrigatoriamente. Podemos orientar na contratação ou publicar em subdomínio temporário enquanto você decide. O importante é começar rápido."
+            }
+          }
+        ]
       }
     ]
   }
